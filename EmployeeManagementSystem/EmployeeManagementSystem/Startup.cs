@@ -30,7 +30,7 @@ namespace EmployeeManagementSystem
                 (options => options.UseSqlServer(_config.GetConnectionString("EmployeeDbConnection")));
 
             services.AddMvc();
-            services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+            services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
